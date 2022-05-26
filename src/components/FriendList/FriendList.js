@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export function FriendList({ friends }) {
   return (
     <ul className="friend-list">
@@ -16,3 +18,7 @@ export function FriendList({ friends }) {
     </ul>
   );
 }
+
+FriendList.propTypes = {
+  friends: PropTypes.arrayOf(PropTypes.object),
+};

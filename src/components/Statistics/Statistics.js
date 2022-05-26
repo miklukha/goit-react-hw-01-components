@@ -1,7 +1,9 @@
-export function Statistics(props) {
+import PropTypes from 'prop-types';
+
+export function Statistics({ title, stats }) {
   return (
-    <Section title={props.title}>
-      <List stats={props.stats} />
+    <Section title={title}>
+      <List stats={stats} />
     </Section>
   );
 }
@@ -11,11 +13,19 @@ function List({ stats }) {
     <ul className="stat-list">
       {stats.map(stat => (
         <li key={stat.id} className="item">
-          <span className="label">{stat.label}</span>
-          <span className="percentage">{stat.percentage}</span>
+          <Li label={stat.label} percentage={stat.percentage} />
         </li>
       ))}
     </ul>
+  );
+}
+
+function Li({ label, percentage }) {
+  return (
+    <>
+      <span className="label">{label}</span>
+      <span className="percentage">{percentage}</span>
+    </>
   );
 }
 
@@ -28,6 +38,26 @@ function Section({ title, children }) {
   );
 }
 
+Statistics.propTypes = {
+  title: PropTypes.string,
+  stats: PropTypes.arrayOf(PropTypes.object),
+};
+
+List.propTypes = {
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({ id: PropTypes.string.isRequired })
+  ),
+};
+
+Section.propTypes = {
+  title: PropTypes.string,
+  children: PropTypes.node,
+};
+
+Li.propTypes = {
+  label: PropTypes.string,
+  percentage: PropTypes.number,
+};
 /**
  *   <>
       <section className="statistics">
