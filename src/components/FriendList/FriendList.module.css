@@ -1,0 +1,38 @@
+.item {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+
+  width: 200px;
+  margin: 0 auto;
+  padding: 5px 10px;
+
+  border-radius: 5px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+  background-color: #ffffff;
+}
+
+.item:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.status {
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+}
+
+.true {
+  background-color: rgb(76, 197, 76);
+}
+
+.false {
+  background-color: rgb(238, 30, 30);
+}
+
+.name {
+  font-size: 16px;
+  color: #2e2e2e;
+}

@@ -30,7 +30,7 @@ export function Statistics({ title, stats }) {
 Statistics.propTypes = {
   title: PropTypes.string,
   stats: PropTypes.arrayOf(
-    PropTypes.shape({
+    PropTypes.exact({
       id: PropTypes.string,
       label: PropTypes.string,
       percentage: PropTypes.number,
