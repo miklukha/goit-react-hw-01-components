@@ -26,10 +26,6 @@ export function App() {
       <Section>
         <Container>
           <Statistics title="Upload stats" stats={data} />
-        </Container>
-      </Section>
-      <Section>
-        <Container>
           <Statistics stats={data} />
         </Container>
       </Section>
