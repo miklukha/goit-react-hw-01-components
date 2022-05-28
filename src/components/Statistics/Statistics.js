@@ -10,7 +10,7 @@ export function Statistics({ title, stats }) {
             <h2 className={s.title}>{title}</h2>
           </div>
         )}
-        <ul className={s.statList}>
+        <ul className={s.list}>
           {stats.map(({ id, label, percentage }) => (
             <li
               key={id}

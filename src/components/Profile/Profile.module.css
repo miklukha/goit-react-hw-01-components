@@ -42,7 +42,7 @@
 
 .stats {
   display: flex;
-  background-color: rgb(228, 228, 228);
+  background-color: #eeeeee;
 
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
