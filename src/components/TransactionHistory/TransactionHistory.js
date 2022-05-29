@@ -19,11 +19,11 @@ export function TransactionHistory({ transactions }) {
         </Row>
       </Head>
       <Body>
-        {transactions.map(item => (
-          <Row key={item.id}>
-            <BodyCell>{item.type}</BodyCell>
-            <BodyCell>{item.amount}</BodyCell>
-            <BodyCell>{item.currency}</BodyCell>
+        {transactions.map(({ id, type, amount, currency }) => (
+          <Row key={id}>
+            <BodyCell>{type}</BodyCell>
+            <BodyCell>{amount}</BodyCell>
+            <BodyCell>{currency}</BodyCell>
           </Row>
         ))}
       </Body>
