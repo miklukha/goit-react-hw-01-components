@@ -4,14 +4,14 @@ export const Table = styled.table`
   margin: 0 auto;
   width: 400px;
 
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  background-color: #ffffff;
-
+  box-shadow: ${props => props.theme.utils.shadow};
   border-collapse: collapse;
+
+  background-color: ${props => props.theme.colors.white};
 `;
 
 export const Head = styled.thead`
-  background-color: rgb(131, 162, 245);
+  background-color: ${props => props.theme.colors.bgRow};
 `;
 
 export const Row = styled.tr`
@@ -25,11 +25,11 @@ export const HeadCell = styled.th`
   width: calc(100% / 3);
   text-align: center;
 
-  font-size: 10px;
+  font-size: ${props => props.theme.fontSizes.small};
   font-weight: 500;
   text-transform: uppercase;
-  color: #ffffff;
-  border-right: 1px solid rgba(255, 255, 255, 0.534);
+  color: ${props => props.theme.colors.white};
+  border-right: 1px solid ${props => props.theme.colors.borderTableHead};
 
   &:nth-of-type(3) {
     border-right: none;
@@ -38,11 +38,11 @@ export const HeadCell = styled.th`
 
 export const Body = styled.tbody`
   & ${Row}:nth-of-type(odd) {
-    background-color: #ffffff;
+    background-color: ${props => props.theme.colors.white};
   }
 
   & ${Row}:nth-of-type(even) {
-    background-color: #eeeeee;
+    background-color: ${props => props.theme.colors.bgItem};
   }
 `;
 
@@ -53,9 +53,9 @@ export const BodyCell = styled.th`
   width: calc(100% / 3);
   text-align: center;
 
-  font-size: 10px;
-  color: #9a9797;
-  border-right: 1px solid rgba(114, 114, 114, 0.2);
+  font-size: ${props => props.theme.fontSizes.small};
+  color: ${props => props.theme.colors.gray};
+  border-right: 1px solid ${props => props.theme.colors.borderTableBody};
 
   &:nth-of-type(3) {
     border-right: none;

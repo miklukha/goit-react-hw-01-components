@@ -1,28 +1,25 @@
-import { getQueriesForElement } from '@testing-library/react';
-
 export const theme = Object.freeze({
   colors: {
-    isOnline: 'rgb(76, 197, 76)',
-    isOffline: 'rgb(238, 30, 30)',
-    accent: '#2196F3',
+    isOnline: '#4CC54C',
+    isOffline: '#EE1E1E',
+    dark: '#2e2e2e',
     white: '#ffffff',
-    gray: '#9e9e9e',
+    gray: '#9a9797',
+    bgItem: '#eeeeee',
+    bgBody: '#d4d3d3',
+    bgRow: '#83A2F5',
     light: '#f2f2f2',
-    dark: '#212121',
+    border: 'rgba(149, 157, 165, 0.2)',
+    borderTableHead: 'rgba(255, 255, 255, 0.534)',
+    borderTableBody: 'rgba(114, 114, 114, 0.2)',
   },
   fontSizes: {
-    small: '14px',
-    medium: '18px',
-    large: '22px',
-    xl: '30px',
-    xxl: '34px',
-    xxxl: '42px',
+    small: '10px',
+    medium: '12px',
+    large: '14px',
+    xl: '18px',
   },
-  breakpoints: {
-    xs: '320px',
-    s: '768px',
-    m: '1024px',
-    l: '1280px',
-    xl: '1440px',
+  utils: {
+    shadow: ' rgba(149, 157, 165, 0.2) 0px 8px 24px',
   },
 });

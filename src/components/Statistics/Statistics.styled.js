@@ -6,9 +6,9 @@ export const Card = styled.div`
   margin-bottom: 20px;
 
   border-radius: 3px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  box-shadow: ${props => props.theme.utils.shadow};
 
-  background-color: #ffffff;
+  background-color: ${props => props.theme.colors.white};
 
   & + & {
     margin-bottom: 0;
@@ -21,11 +21,11 @@ export const Wrapper = styled.div`
 `;
 
 export const Title = styled.h2`
-  font-size: 14px;
+  font-size: ${props => props.theme.fontSizes.large};
   text-transform: uppercase;
   text-align: center;
 
-  color: #9a9797;
+  color: ${props => props.theme.colors.gray};
 `;
 
 export const List = styled.ul`
@@ -42,14 +42,14 @@ export const Item = styled.li`
   padding-top: 10px;
   padding-bottom: 10px;
 
-  color: #ffffff;
+  color: ${props => props.theme.colors.white};
 `;
 
 export const Label = styled.span`
-  font-size: 10px;
+  font-size: ${props => props.theme.fontSizes.small};
   line-height: calc(18 / 10);
 `;
 
 export const Percentage = styled.span`
-  font-size: 12px;
+  font-size: ${props => props.theme.fontSizes.medium};
 `;

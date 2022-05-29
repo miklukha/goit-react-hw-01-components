@@ -12,9 +12,9 @@ export const Item = styled.li`
   padding: 5px 10px;
 
   border-radius: 5px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  box-shadow: ${props => props.theme.utils.shadow};
 
-  background-color: #ffffff;
+  background-color: ${props => props.theme.colors.white};
 
   &:not(:last-child) {
     margin-bottom: 10px;
@@ -33,5 +33,5 @@ export const Status = styled.span`
 
 export const Name = styled.p`
   font-size: 16px;
-  color: #2e2e2e;
+  color: ${props => props.theme.colors.dark};
 `;

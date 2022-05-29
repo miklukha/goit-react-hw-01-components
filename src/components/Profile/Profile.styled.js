@@ -6,9 +6,9 @@ export const Card = styled.div`
   padding-top: 30px;
 
   border-radius: 5px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  box-shadow: ${props => props.theme.utils.shadow};
 
-  background-color: #ffffff;
+  background-color: ${props => props.theme.colors.white};
 `;
 
 export const Description = styled.div`
@@ -27,31 +27,29 @@ export const Avatar = styled.div`
 
 export const Name = styled.p`
   font-weight: 500;
-  font-size: 18px;
-
-  color: #2e2e2e;
+  font-size: ${props => props.theme.fontSizes.xl};
+  color: ${props => props.theme.colors.dark};
 `;
 
 export const Tag = styled.p`
-  font-size: 12px;
-
-  color: #9a9797;
+  font-size: ${props => props.theme.fontSizes.medium};
+  color: ${props => props.theme.colors.gray};
 `;
 
 export const Location = styled.p`
-  font-size: 12px;
-
-  color: #9a9797;
+  font-size: ${props => props.theme.fontSizes.medium};
+  color: ${props => props.theme.colors.gray};
 
   composes: ${Tag};
 `;
 
 export const Stats = styled.ul`
   display: flex;
-  background-color: #eeeeee;
 
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+
+  background-color: ${props => props.theme.colors.bgItem};
 `;
 
 export const Item = styled.li`
@@ -63,8 +61,8 @@ export const Item = styled.li`
   padding-top: 10px;
   padding-bottom: 10px;
 
-  border-top: 1px solid rgba(149, 157, 165, 0.2);
-  border-right: 1px solid rgba(149, 157, 165, 0.2);
+  border-top: 1px solid ${props => props.theme.colors.border};
+  border-right: 1px solid ${props => props.theme.colors.border};
 
   &:nth-of-type(3) {
     border-right: none;
@@ -72,15 +70,13 @@ export const Item = styled.li`
 `;
 
 export const Label = styled.span`
-  font-size: 12px;
+  font-size: ${props => props.theme.fontSizes.medium};
   line-height: calc(18 / 12);
-
-  color: #9a9797;
+  color: ${props => props.theme.colors.gray};
 `;
 
 export const Quantity = styled.span`
   font-weight: 700;
-  font-size: 12px;
-
-  color: #2e2e2e;
+  font-size: ${props => props.theme.fontSizes.medium};
+  color: ${props => props.theme.colors.dark};
 `;

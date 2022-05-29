@@ -32,5 +32,12 @@ export function TransactionHistory({ transactions }) {
 }
 
 TransactionHistory.propTypes = {
-  transactions: PropTypes.arrayOf(PropTypes.object),
+  transactions: PropTypes.arrayOf(
+    PropTypes.exact({
+      id: PropTypes.string,
+      type: PropTypes.string,
+      amount: PropTypes.string,
+      currency: PropTypes.string,
+    })
+  ),
 };

@@ -1,4 +1,5 @@
 import { css } from '@emotion/react';
+import { theme } from 'styles/theme';
 
 export const GlobalStyles = css`
   html {
@@ -13,7 +14,7 @@ export const GlobalStyles = css`
       'Helvetica Neue', sans-serif;
     min-height: 100vh;
     font-style: normal;
-    background-color: #d4d3d3;
+    background-color: ${theme.colors.bgBody};
   }
 
   h1,
