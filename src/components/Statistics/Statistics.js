@@ -1,28 +1,33 @@
+import { getRandomColor } from 'helpers/getRandomColor';
 import PropTypes from 'prop-types';
-import s from './Statistics.module.css';
+import {
+  Card,
+  Wrapper,
+  Title,
+  List,
+  Item,
+  Label,
+  Percentage,
+} from './Statistics.styled';
 
 export function Statistics({ title, stats }) {
   return (
     <>
-      <div className={s.statistics}>
+      <Card>
         {title && (
-          <div className={s.wrapper}>
-            <h2 className={s.title}>{title}</h2>
-          </div>
+          <Wrapper>
+            <Title>{title}</Title>
+          </Wrapper>
         )}
-        <ul className={s.list}>
+        <List>
           {stats.map(({ id, label, percentage }) => (
-            <li
-              key={id}
-              className={s.item}
-              style={{ backgroundColor: `#${randomColor()}` }}
-            >
-              <span className={s.label}>{label}</span>
-              <span className={s.percentage}>{percentage}%</span>
-            </li>
+            <Item key={id} style={{ backgroundColor: `${getRandomColor()}` }}>
+              <Label>{label}</Label>
+              <Percentage>{percentage}%</Percentage>
+            </Item>
           ))}
-        </ul>
-      </div>
+        </List>
+      </Card>
     </>
   );
 }
@@ -37,9 +42,3 @@ Statistics.propTypes = {
     })
   ),
 };
-
-function randomColor() {
-  const color = Math.floor(Math.random() * 16777215).toString(16);
-
-  return color;
-}

@@ -1,22 +1,26 @@
 import PropTypes from 'prop-types';
-import s from './FriendList.module.css';
-
+import { List, Item, Status, Name } from './FriendList.styled';
 export function FriendList({ friends }) {
   return (
-    <ul>
-      {friends.map(friend => (
-        <li key={friend.id} className={s.item}>
-          <span
-            className={`${s.status} ${friend.isOnline ? s.true : s.false}`}
-          ></span>
-          <img src={friend.avatar} alt={friend.name} width="48" />
-          <p className={s.name}>{friend.name}</p>
-        </li>
+    <List>
+      {friends.map(({ id, isOnline, name, avatar }) => (
+        <Item key={id}>
+          <Status eventType={isOnline}></Status>
+          <img src={avatar} alt={name} width="48" />
+          <Name>{name}</Name>
+        </Item>
       ))}
-    </ul>
+    </List>
   );
 }
 
 FriendList.propTypes = {
-  friends: PropTypes.arrayOf(PropTypes.object),
+  friends: PropTypes.arrayOf(
+    PropTypes.exact({
+      id: PropTypes.number,
+      isOnline: PropTypes.bool,
+      avatar: PropTypes.string,
+      name: PropTypes.string,
+    })
+  ),
 };
